@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ChatGPT quick open",
+    "description": "Adds a GPT button to the message composer toolbar that opens ChatGPT in a separate popup window."
+  }
+}

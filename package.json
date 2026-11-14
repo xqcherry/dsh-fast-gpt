@@ -1,0 +1,68 @@
+{
+  "name": "@xqcherry/dsh-fast-gpt",
+  "version": "1.0.0",
+  "description": "A DeepSeek Harness Web plugin that opens ChatGPT in a popup window from the composer toolbar.",
+  "type": "module",
+  "license": "MIT",
+  "author": "xqcherry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xqcherry/dsh-fast-gpt.git"
+  },
+  "homepage": "https://github.com/xqcherry/dsh-fast-gpt#readme",
+  "bugs": {
+    "url": "https://github.com/xqcherry/dsh-fast-gpt/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "chatgpt",
+    "openai",
+    "composer"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepack": "pnpm build"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

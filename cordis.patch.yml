@@ -1,0 +1,5 @@
+# Bundle patch: insert the Host row named after this package. The `dsh.client`
+# declaration in package.json makes the web app load lib/client.js beside it.
+- insert:
+    - id: fast-gpt
+      name: '@xqcherry/dsh-fast-gpt'
